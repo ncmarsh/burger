@@ -1,0 +1,49 @@
+.jumbotron {
+    height: 50px;
+    background-color: #c7c7c7;
+    border-bottom: solid grey;
+}
+
+body {
+    background-color: #a1ca86;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-decoration: underline;
+}
+
+.options {
+    text-align: center;
+}
+
+.eaten {
+    text-align: center;
+}
+
+.burger-display {
+    min-height: 400px;
+}
+
+/* ul {
+    list-style-image: url("");
+    list-style-type: none;
+} */
+
+li {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+}
+
+.devour_btn {
+    margin-right: 3px;
+    margin-left: 10px;
+}
+
+.make-burger {
+    text-align: center;
+    border: 2px black solid;
+    width: 50%;
+}
