@@ -1,7 +1,16 @@
 .jumbotron {
-    height: 50px;
+    height: 10%;
+    max-height: 200px;
     background-color: #c7c7c7;
     border-bottom: solid grey;
+    padding-top: 2rem;
+}
+
+/* Burger img */
+img {
+    height: auto;
+    width: 12%;
+    max-width: 190px;
 }
 
 body {
@@ -14,14 +23,18 @@ h1 {
     text-decoration: underline;
 }
 
+/* Available burger column */
 .options {
     text-align: center;
 }
 
+/* Devoured burger column */
 .eaten {
     text-align: center;
+    font-style: italic;
 }
 
+/* Section for the burger lists */
 .burger-display {
     min-height: 400px;
 }
@@ -33,19 +46,36 @@ ul {
 li {
     margin: 5px;
     background: #faebd7;
-    height: 50px;
-    line-height: 50px;
+    height: auto;
+    min-height: 4rem;
+    line-height: 4rem;
     text-align: center;
+    text-transform: capitalize;
+    border-radius: 10px;
+    font-size: 20px;
 }
 
+/* Devour button on available burgers */
 .devour_btn {
-    margin-right: 3px;
-    margin-left: 10px;
+    margin-left: 1rem;
 }
 
-.make-burger {
+/* Make a burger section */
+.make-burger-col {
     text-align: center;
     border: 3px black solid;
     width: 50%;
     background-color: #cdffac;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.make-burger-btn {
+    padding: 0.25rem;
+    width: 10%;
+}
+
+.grill-img {
+    width: 100%;
+    height: auto;
 }
