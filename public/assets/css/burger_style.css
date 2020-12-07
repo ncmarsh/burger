@@ -26,15 +26,16 @@ h1 {
     min-height: 400px;
 }
 
-/* ul {
-    list-style-image: url("");
+ul {
     list-style-type: none;
-} */
+}
 
 li {
-    padding: 5px;
     margin: 5px;
     background: #faebd7;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
 }
 
 .devour_btn {
@@ -44,6 +45,7 @@ li {
 
 .make-burger {
     text-align: center;
-    border: 2px black solid;
+    border: 3px black solid;
     width: 50%;
+    background-color: #cdffac;
 }
