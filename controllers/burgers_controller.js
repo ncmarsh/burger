@@ -9,16 +9,13 @@ const burger = require("../models/burger.js");
 // Show all the burgers
 router.get("/", function(req, res) {
     burger.selectAll(function(data) {
-        let allBurgers = { burger: data };
-        console.log(allBurgers);
-        res.render("index", allBurgers);
+        res.render("index", { burger: data });
     });
 });
 
 // Add new burger from user input
 router.post("/api/burgers", function(req, res) {
-    console.log(req.body);
-    burger.insertOne(["burger_name"], [req.body.burger_name], function(result) {
+    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, 0], function(result) {
         res.json({id: result.insertId});
     });
 });
@@ -26,10 +23,6 @@ router.post("/api/burgers", function(req, res) {
 // Update burger when eaten
 router.put("/api/burgers/:id", function(req, res) {
     let eaten = "id = " + req.params.id;
-    console.log(req.body);
-    console.log("updated");
-
-    console.log("devoured", eaten);
 
     burger.updateOne(
         {
