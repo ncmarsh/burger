@@ -1,17 +1,17 @@
 const connection = require("./connection.js");
 
 function printQuestionMarks(num) {
-    let arr = [];
+    let questMarkArr = [];
   
     for (let i = 0; i < num; i++) {
-      arr.push("?");
+        questMarkArr.push("?");
     }
   
-    return arr.toString();
+    return questMarkArr.toString();
 }
 
 function objToSql(ob) {
-    let arr = [];
+    let sqlArr = [];
   
     // loop through the keys and push the key/value as a string int arr
     for (let key in ob) {
@@ -22,17 +22,17 @@ function objToSql(ob) {
         if (typeof value === "string" && value.indexOf(" ") >= 0) {
           value = "'" + value + "'";
         }
-        arr.push(key + "=" + value);
+        sqlArr.push(key + "=" + value);
       }
     }
     // translate array of strings to a single comma-separated string
-    return arr.toString();
+    return sqlArr.toString();
 }
 
 const orm = {
     selectAll: function(tableName, cb) {
         const queryString = "SELECT * FROM " + tableName + ";";
-        console.log(queryString);
+
         connection.query(queryString, function(err, result) {
             if (err) throw err;
             cb(result);
@@ -40,23 +40,17 @@ const orm = {
     },
     insertOne: function(tableName, cols, vals, cb) {
         const queryString = "INSERT INTO " + tableName + " (" + cols.toString() + ") VALUES (" + printQuestionMarks(vals.length) + ")";
-
-        console.log(queryString); 
         
         connection.query(queryString, vals, function(err, result) {
             if (err) throw err;
-
             cb(result);
         });
     },
     updateOne: function(tableName, objColVals, condition, cb) {
         const queryString = "UPDATE " + tableName + " SET " + objToSql(objColVals) + " WHERE " + condition;
 
-        console.log(queryString);
-
         connection.query(queryString, function(err, result) {
             if (err) throw err;
-
             cb(result);
         });
     }
