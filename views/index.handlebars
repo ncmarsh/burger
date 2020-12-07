@@ -1,8 +1,4 @@
 {{!-- HTML for handlebars to render to --}}
-<div class="jumbotron">
-  <h1>Eat All the Burgers!</h1>
-</div>
-
 <div class="container">
   <div class="row burger-display">
     <div class="col options">
@@ -30,14 +26,13 @@
     </div>
   </div>
 
-  <div class="row make-burger">
-    <div class="col">
+  <div class="row">
+    <div class="col-md-6 mx-auto make-burger-col">
       <h3>Make a New Burger</h3>
       <form class="burger-form">
         <div>
-          <label for="burger">Burger Name:</label>
           <input type="text" id="burger" name="burger_name">
-          <button type="submit" class="btn btn-dark">Make Burger</button>
+          <button type="submit" class="btn btn-secondary make-burger-btn"><img src="/assets/img/grill.png" alt="grill" class="grill-img"></button>
         </div>
       </form>
     </div>
