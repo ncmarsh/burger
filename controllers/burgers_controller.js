@@ -1,3 +1,4 @@
+// Dependencies
 const express = require("express");
 const { selectAll, insertOne, updateOne } = require("../config/orm");
 const router = express.Router();
@@ -31,7 +32,7 @@ router.put("/api/burgers/:id", function(req, res) {
         eaten,
         function(result) {
             if (result.changedRows === 0) {
-                // If no rows were changed, Id does not exist, is 404
+                // if no rows were changed, Id does not exist, is 404
                 return res.status(404).end();
             }
             res.status(200).end();

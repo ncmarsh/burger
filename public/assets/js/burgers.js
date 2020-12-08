@@ -1,5 +1,6 @@
-
+// Will attach handlers when DOM is fully loaded
 $(function() {
+  // When the DEVOUR! button is clicked
   $(".devour_btn").on("click", function(event) {
     const id = $(this).data("id");
     const burger_name = $(this).data("burger_name");
@@ -9,21 +10,22 @@ $(function() {
       devoured: nowDevoured
     };
 
-    // Send the PUT request.
+    // send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
       data: nowDevouredState
     }).then(
       function() {
         console.log("You have eaten a " + burger_name + " burger");
-        // Reload the page to get up to date lists
+        // reload the page to get up to date lists
         location.reload();
       }
     );
   });
 
+  // When the button is clicked to make a new burger
   $(".burger-form").on("submit", function(event) {
-    // Make sure to preventDefault on a submit event.
+    // make sure to preventDefault on a submit event.
     event.preventDefault();
 
     const notEaten = parseInt(0);
@@ -32,14 +34,14 @@ $(function() {
       devoured: notEaten
     };
 
-    // Send the POST request.
+    // send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
     }).then(
       function() {
         console.log("New burger grilled!");
-        // Reload the page to get up to date lists
+        // reload the page to get up to date lists
         location.reload();
       }
     );

@@ -1,8 +1,6 @@
 // Dependencies
 const express = require("express");
-
 const PORT = process.env.PORT || 3000;
-
 const app = express();
 
 // Serve static content from the "public" directory

@@ -6,7 +6,7 @@
     padding-top: 2rem;
 }
 
-/* Burger img */
+/* Burger image */
 img {
     height: auto;
     width: 12%;
@@ -34,7 +34,7 @@ h1 {
     font-style: italic;
 }
 
-/* Section for the burger lists */
+/* Burger lists */
 .burger-display {
     min-height: 375px;
 }
