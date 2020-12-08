@@ -1,16 +1,17 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "1. [Usage](#Usage)\r 1. [Languages and Concepts](#Languages-and-Concepts)\r 1. [Installation](#Installation)\r 1. [Demo](#Demo)\r 1. [Roadmap](#Roadmap)\r 1. [Links](#Links)\r 1. [Contact](#Contact)\r 1. [Contributing](#Contributing)\r 1. [License](#License)",
+  "description": "Tracks burgers eaten",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ncmarsh/burger.git"
   },
-  "author": "",
+  "author": "ncmarsh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ncmarsh/burger/issues"
