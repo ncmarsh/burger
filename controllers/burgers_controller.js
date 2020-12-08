@@ -9,10 +9,10 @@ const burger = require("../models/burger.js");
 // Routes
 // Show all the burgers
 router.get("/", function(req, res) {
-    burger.selectAll(function(err, data) {
-        if (err) {
-            return res.status(500).end();
-        };
+    burger.selectAll(function(data) {
+        // if (err) {
+        //     return res.status(500).end();
+        // };
         res.render("index", { burger: data });
     });
 });
