@@ -10,19 +10,13 @@ const burger = require("../models/burger.js");
 // Show all the burgers
 router.get("/", function(req, res) {
     burger.selectAll(function(data) {
-        // if (err) {
-        //     return res.status(500).end();
-        // };
         res.render("index", { burger: data });
     });
 });
 
 // Add new burger from user input
 router.post("/api/burgers", function(req, res) {
-    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, 0], function(err, result) {
-        if (err) {
-            return res.status(500).end();
-        };
+    burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, 0], function(result) {
         res.json({id: result.insertId});
     });
 });
@@ -36,10 +30,7 @@ router.put("/api/burgers/:id", function(req, res) {
             devoured: req.body.devoured
         },
         eaten,
-        function(err, result) {
-            if (err) {
-                return res.status(500).end();
-            };
+        function(result) {
             if (result.changedRows === 0) {
                 // if no rows were changed, Id does not exist, is 404
                 return res.status(404).end();
