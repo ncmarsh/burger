@@ -36,7 +36,7 @@ h1 {
 
 /* Section for the burger lists */
 .burger-display {
-    min-height: 400px;
+    min-height: 375px;
 }
 
 ul {
@@ -58,6 +58,7 @@ li {
 /* Devour button on available burgers */
 .devour_btn {
     margin-left: 1rem;
+    color: white;
 }
 
 /* Make a burger section */
