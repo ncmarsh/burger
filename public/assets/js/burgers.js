@@ -25,26 +25,30 @@ $(function() {
 
   // When the button is clicked to make a new burger
   $(".burger-form").on("submit", function(event) {
-    // make sure to preventDefault on a submit event.
-    event.preventDefault();
+    if ($("#burger").val() === "") {
+      console.log("No burger entered");
+    } else {
+      // preventDefault on a form submit event
+      event.preventDefault();
 
-    const notEaten = parseInt(0);
-    const newBurger = {
-      burger_name: $("#burger").val().trim(),
-      devoured: notEaten
-    };
+      const notEaten = parseInt(0);
+      const newBurger = {
+        burger_name: $("#burger").val().trim(),
+        devoured: notEaten
+      };
 
-    // send the POST request.
-    $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger
-    }).then(
-      function() {
-        console.log("New burger grilled!");
-        // reload the page to get up to date lists
-        location.reload();
-      }
-    );
+      // send the POST request.
+      $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger
+      }).then(
+        function() {
+          console.log("New burger grilled!");
+          // reload the page to get up to date lists
+          location.reload();
+        }
+      );
+    }
   });
 });
   
