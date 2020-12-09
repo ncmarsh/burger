@@ -1,6 +1,7 @@
 // Dependencies
 const mysql = require("mysql");
 require("dotenv").config();
+let connection;
 
 // Establish connection to MySQL server
 if (process.env.JAWSDB_URL) {
